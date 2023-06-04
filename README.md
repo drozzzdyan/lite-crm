@@ -1,3 +1,3 @@
-# lite-crm
+# CRM 
 
 project is building
