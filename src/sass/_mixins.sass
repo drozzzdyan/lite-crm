@@ -1,0 +1,13 @@
+@import '_variables.sass'
+  
+@mixin setFontStyle
+  font-family: 'Open Sans'
+  font-style: normal
+  font-weight: 400
+
+@mixin borderInteractive
+  transition: border-color .4s ease-in-out
+  &:focus
+    border-color: $firmColor
+  &:hover
+    border-color: $firmColor
