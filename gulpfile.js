@@ -21,6 +21,15 @@ export const clean = async () => {
   await deleteAsync(['dist', 'build'])
 }
 
+export const replaceNormalize = () => {
+  return gulp.src('./src/*.css')
+    .pipe(gulp.dest('./build'))
+    .pipe(minifyHtml({
+      collapseWhitespace: true
+    }))
+    .pipe(gulp.dest('./dist'))
+}
+
 export const css = () => {
   return gulp.src('./src/sass/**/*.sass')
     .pipe(sourcemaps.init())
@@ -71,4 +80,4 @@ gulp.watch('src/**/*.html', html)
 gulp.watch('src/**/*.sass', css)
 gulp.watch('src/**/*.svg', svgSprites)
 
-export default gulp.series(clean, html, css, svgSprites, watchFiles)
+export default gulp.series(clean, html, css, svgSprites, replaceNormalize, watchFiles)

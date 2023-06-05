@@ -1,9 +1,23 @@
+@import '_variables.sass'
 @import '_mixins.sass'
-  
-*
-  box-sizing: border-box
+
+*,
+*:before,
+*:after
+  box-sizing: inherit
 
 html, body
-  background-color: #fff
+  box-sizing: border-box
+  background-color: $bodyColor
   @include setFontStyle
-  
+
+svg
+  height: 16px
+
+button:disabled
+  cursor: auto
+
+.container
+  margin-left: max((100% - $containerWidth) / 2, 20px)
+  margin-right: max((100% - $containerWidth) / 2, 20px)
+

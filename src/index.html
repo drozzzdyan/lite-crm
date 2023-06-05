@@ -6,14 +6,123 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>lite-crm</title>
+  <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
   <object style="display: none;" data="sprite.svg" type="image/svg+xml"></object>
-  <svg>
-    <use xlink:href="sprite.svg#logo"></use>
-  </svg>
+
+  <header class="header">
+    <div class="header__container container">
+      <a class="header__link" href="#">
+        <svg class="header__logo">
+          <use xlink:href="sprite.svg#logo"></use>
+        </svg>
+      </a>
+      <form class="search" action="#" method="get">
+        <input class="search__input" type="text" placeholder="Введите запрос">
+      </form>
+    </div>
+  </header>
+
+  <section class="clients">
+    <div class="clients__container container">
+      <h2 class="clients__header">
+        Клиенты
+      </h2>
+
+      <!-- head of table -->
+      <div class="table">
+        <div class="table__head grid">
+          <div class="table__head-item grid__item">
+            <button class="table__btn">
+              ID
+              <svg class="arrow-downward">
+                <use xlink:href="sprite.svg#arrow-downward"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="table__head-item grid__item">
+            <button class="table__btn">
+              Фамилия Имя Отчество
+              <svg class="arrow-downward">
+                <use xlink:href="sprite.svg#arrow-downward"></use>
+              </svg>
+              <span class="sort-indicator">А-Я</span>
+            </button>
+          </div>
+          <div class="table__head-item grid__item">
+            <button class="table__btn">
+              Дата и время создания
+              <svg class="arrow-downward">
+                <use xlink:href="sprite.svg#arrow-downward"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="table__head-item grid__item">
+            <button class="table__btn">
+              Последние изменения
+              <svg class="arrow-downward">
+                <use xlink:href="sprite.svg#arrow-downward"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="table__head-item grid__item">
+            <button class="table__btn" disabled>
+              Контакты
+            </button>
+          </div>
+          <div class="table__head-item grid__item">
+            <button class="table__btn" disabled>
+              Действия
+            </button>
+          </div>
+        </div>
+
+        <!-- body of table -->
+        <div class="table__body grid">
+          <div class="table__body-item table__body-id grid__item">
+            123455
+          </div>
+          <div class="table__body-item grid__item">
+            Скворцов Денис Юрьевич
+          </div>
+          <div class="table__body-item grid__item">
+            <time datetime="2021-02-21 12:10">21.02.2021 <span class="o-clock">12:10</span></time>
+          </div>
+          <div class="table__body-item grid__item">
+            <time datetime="2021-02-22 14:50">22.02.2021 <span class="o-clock">14:50</span></time>
+          </div>
+          <div class="table__body-item contacts grid__item">
+            <svg>
+              <use xlink:href="sprite.svg#vk"></use>
+            </svg>
+            <svg>
+              <use xlink:href="sprite.svg#vk"></use>
+            </svg>
+            <svg>
+              <use xlink:href="sprite.svg#vk"></use>
+            </svg>
+          </div>
+          <div class="table__body-item actions grid__item">
+            <button class="edit-btn">
+              <svg>
+                <use xlink:href="sprite.svg#edit"></use>
+              </svg>
+              Изменить
+            </button>
+            <button class="delete-btn">
+              <svg>
+                <use xlink:href="sprite.svg#cancel"></use>
+              </svg>
+              Удалить
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>

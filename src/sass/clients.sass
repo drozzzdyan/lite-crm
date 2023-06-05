@@ -1,0 +1,81 @@
+@import '_variables.sass'
+@import '_mixins.sass'
+
+.clients
+  &__header
+    @include h-reset
+    margin-bottom: 10px
+    @include setFontStyle
+    font-weight: 700
+    font-size: 24px
+    line-height: 33px
+    color: $mainGray
+
+.arrow-downward
+  width: 12px
+  height: 12px
+
+.grid
+  display: grid
+  gap: 3px 0
+  grid-template-columns: 62px minmax(190px, 1fr) minmax(100px, 140px) minmax(100px, 140px) 120px minmax(95px, 190px)
+  grid-auto-flow: dense
+  &__item
+    padding: 10px 5px
+    display: flex
+    justify-content: start
+    align-items: center
+
+.table
+  overflow: auto hidden
+  &__head
+    margin-bottom: 3px
+    font-size: 12px
+    line-height: 16px
+  &__body-item
+    font-size: 14px
+    line-height: 19px
+    color: $mainGray
+    background-color: $mainWhite
+  &__body-id
+    height: 100%
+    margin-bottom: 10px
+    font-size: 12px
+    line-height: 16px
+    color: $textGray
+  &__btn
+    @include btn-reset
+    color: $textGray
+    text-align: left
+
+.o-clock
+  color: $textGray
+
+.sort-indicator
+  color: $firmColor
+
+.contacts
+  display: grid
+  gap: 7px
+  grid-template-columns: repeat(5, 16px)
+  grid-auto-rows: minmax(16px, 1fr)
+  svg
+    @include svgSize
+
+.edit-btn,
+.delete-btn
+  @include btn-reset
+  display: flex
+  svg
+    @include svgSize
+    margin-right: 5px
+
+.delete-btn
+  svg
+    fill: $mainRed
+
+.actions
+  display: flex
+  justify-content: space-between
+  flex-direction: row
+  flex-wrap: wrap

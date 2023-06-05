@@ -1,4 +1,19 @@
 @import '_variables.sass'
+
+// resets
+@mixin h-reset
+  margin: 0
+  font-style: normal
+  font-weight: normal
+
+@mixin btn-reset
+  margin: 0
+  padding: 0
+  border: none
+  outline: none
+  background-color: transparent
+  cursor: pointer
+  color: $mainGray
   
 @mixin setFontStyle
   font-family: 'Open Sans'
@@ -11,3 +26,8 @@
     border-color: $firmColor
   &:hover
     border-color: $firmColor
+
+@mixin svgSize
+  width: 16px
+  height: 16px
+  
