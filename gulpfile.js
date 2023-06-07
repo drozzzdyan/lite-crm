@@ -23,10 +23,16 @@ export const clean = async () => {
 
 export const replaceNormalize = () => {
   return gulp.src('./src/*.css')
-    .pipe(gulp.dest('./build'))
+    .pipe(gulp.dest('./dist'))
     .pipe(minifyHtml({
       collapseWhitespace: true
     }))
+    .pipe(gulp.dest('./build'))
+}
+
+export const replaceJS = () => {
+  return gulp.src('./src/**/*.js')
+    .pipe(gulp.dest('./build'))
     .pipe(gulp.dest('./dist'))
 }
 
@@ -79,5 +85,6 @@ const watchFiles = () => {
 gulp.watch('src/**/*.html', html)
 gulp.watch('src/**/*.sass', css)
 gulp.watch('src/**/*.svg', svgSprites)
+gulp.watch('src/**/*.js', replaceJS)
 
-export default gulp.series(clean, html, css, svgSprites, replaceNormalize, watchFiles)
+export default gulp.series(clean, html, css, svgSprites, replaceNormalize, replaceJS, watchFiles)

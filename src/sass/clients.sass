@@ -2,6 +2,7 @@
 @import '_mixins.sass'
 
 .clients
+  margin-bottom: 40px
   &__header
     @include h-reset
     margin-bottom: 10px
@@ -18,16 +19,17 @@
 .grid
   display: grid
   gap: 3px 0
-  grid-template-columns: 62px minmax(190px, 1fr) minmax(100px, 140px) minmax(100px, 140px) 120px minmax(95px, 190px)
+  grid-template-columns: 65px minmax(210px, 1fr) minmax(120px, 150px) minmax(120px, 150px) 140px minmax(130px, 220px)
   grid-auto-flow: dense
   &__item
-    padding: 10px 5px
+    padding: 10px 15px
     display: flex
     justify-content: start
     align-items: center
 
 .table
-  overflow: auto hidden
+  padding-bottom: 20px
+  overflow: auto
   &__head
     margin-bottom: 3px
     font-size: 12px
@@ -47,6 +49,8 @@
     @include btn-reset
     color: $textGray
     text-align: left
+    @include hoverText
+    @include focusBtn
 
 .o-clock
   color: $textGray
@@ -69,13 +73,20 @@
   svg
     @include svgSize
     margin-right: 5px
+  @include hoverText
+  @include focusBtn
 
 .delete-btn
   svg
     fill: $mainRed
+  @include hoverText($mainRed)
 
 .actions
   display: flex
   justify-content: space-between
   flex-direction: row
   flex-wrap: wrap
+
+.simplebar-scrollbar:before
+  background: none
+  background-color: $firmColor

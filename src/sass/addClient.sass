@@ -1,0 +1,28 @@
+@import '_variables.sass'
+@import '_mixins.sass'
+
+.add
+  display: flex
+  justify-content: center
+  margin-bottom: 40px
+  &__btn
+    @include btn-reset
+    display: flex
+    align-items: center
+    padding: 13px 27px
+    border: 1px solid $firmColor
+    @include setFontStyle
+    font-weight: 600
+    font-size: 14px
+    line-height: 19px
+    color: $firmColor
+    transition: background-color .4s ease-in-out
+    &:hover,
+    &:focus,
+    &:active
+      background-color: $firmColorTransparent
+    @include focusBtn
+  &__icon
+    margin-right: 5px
+    width: 22px
+    height: 16px

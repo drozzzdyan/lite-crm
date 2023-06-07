@@ -14,9 +14,9 @@
   background-color: transparent
   cursor: pointer
   color: $mainGray
-  
+
 @mixin setFontStyle
-  font-family: 'Open Sans'
+  font-family: 'Open Sans', sans-serif
   font-style: normal
   font-weight: 400
 
@@ -30,4 +30,23 @@
 @mixin svgSize
   width: 16px
   height: 16px
-  
+
+@mixin hoverText($color: $firmColor)
+  transition: color .4s ease-in-out
+  &:hover
+    color: $color
+
+@mixin focusBtn
+  position: relative
+  &::before
+    $offset: -5px
+    content: ''
+    position: absolute
+    top: $offset
+    right: $offset
+    bottom: $offset
+    left: $offset
+    border: 1px solid transparent
+    transition: border-color .4s ease-in-out
+  &:focus::before
+    border-color: $firmColor
