@@ -21,7 +21,7 @@ export const clean = async () => {
   await deleteAsync(['dist', 'build'])
 }
 
-export const replaceNormalize = () => {
+export const replaceCss = () => {
   return gulp.src('./src/*.css')
     .pipe(gulp.dest('./dist'))
     .pipe(minifyHtml({
@@ -87,4 +87,4 @@ gulp.watch('src/**/*.sass', css)
 gulp.watch('src/**/*.svg', svgSprites)
 gulp.watch('src/**/*.js', replaceJS)
 
-export default gulp.series(clean, html, css, svgSprites, replaceNormalize, replaceJS, watchFiles)
+export default gulp.series(clean, html, css, svgSprites, replaceCss, replaceJS, watchFiles)

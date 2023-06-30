@@ -6,6 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>lite-crm</title>
+  <script>
+    window.onload = () => {
+      const loader = document.querySelector('.loader')
+      const loaderCircles = document.querySelectorAll('.loader__circle')
+      loader.classList.add('loader-hide')
+      loaderCircles.forEach(el => el.classList.add('loader__circles-hide'));
+      const timeout = setTimeout(() => {
+        loader.classList.add('loader-off')
+        document.body.classList.remove('stop-scroll')
+        clearTimeout(timeout)
+      }, 1000)
+    }
+  </script>
+  <link rel="stylesheet" href="loader.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +32,17 @@
 </head>
 
 <body>
+  <div class="loader">
+    <div class="loader__circle"></div>
+    <div class="loader__circle"></div>
+    <div class="loader__circle"></div>
+    <div class="loader__circle"></div>
+    <div class="loader__circle"></div>
+    <div class="loader__circle"></div>
+    <div class="loader__circle"></div>
+    <div class="loader__circle"></div>
+  </div>
+  
   <object style="display: none;" data="sprite.svg" type="image/svg+xml"></object>
 
   <header class="header">
