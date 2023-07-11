@@ -1,12 +1,10 @@
-import {
-  startApp
-} from './animate.js';
-import {
-  setTableHeight
-} from './render.js'
+import { startAppAnimate } from './animate.js';
+import { startModal } from './modal.js';
+import { setTableHeight } from './render.js'
 
 setTableHeight();
-startApp();
+startAppAnimate();
+startModal();
 
 window.addEventListener('resize', () => {
   setTableHeight();

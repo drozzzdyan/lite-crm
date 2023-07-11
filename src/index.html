@@ -42,7 +42,7 @@
     <div class="loader__circle"></div>
     <div class="loader__circle"></div>
   </div>
-  
+
   <object style="display: none;" data="sprite.svg" type="image/svg+xml"></object>
 
   <header class="header">
@@ -178,6 +178,49 @@
       </svg>
       Добавить клиента
     </button>
+  </section>
+
+  <section class="modal">
+    <div class="modal__card">
+      <button class="close">
+        <div class="close__stick close__stick_1"></div>
+        <div class="close__stick close__stick_2"></div>
+      </button>
+      <form class="form" action="" method="post">
+        <legend class="form__header">
+          Изменить данные
+          <span class="form__id">ID: 123458</span>
+        </legend>
+        <fieldset class="form__fullname">
+          <div class="form__item">
+            <label class="form__label">Фамилия<span class="form__require">*</span></label>
+            <input class="form__input" type="text" name="surname" required>
+          </div>
+          <div class="form__item">
+            <label class="form__label">Имя<span class="form__require">*</span></label>
+            <input class="form__input" type="text" name="name" required>
+          </div>
+          <div class="form__item">
+            <label class="form__label">Отчество</label>
+            <input class="form__input" type="text" name="midname">
+          </div>
+        </fieldset>
+        <fieldset class="form__contacts">
+          <button class="form__add-contact">
+            <svg class="form__btn-icon">
+              <use xlink:href="sprite.svg#add_circle_outline"></use>
+            </svg>
+            Добавить контакт
+          </button>
+        </fieldset>
+        <button class="form__save">
+          Сохранить
+        </button>
+        <button class="form__delete">
+          Удалить клиента
+        </button>
+      </form>
+    </div>
   </section>
 </body>
 

@@ -1,0 +1,144 @@
+@import '_variables.sass'
+@import '_mixins.sass'
+
+.modal
+  padding: 10px
+  position: absolute
+  top: 0
+  left: 0
+  display: none
+  flex-direction: column
+  justify-content: center
+  width: 100%
+  height: 100vh
+  background-color: $inputBorder
+  opacity: 0
+  &__card
+    position: relative
+    margin: 0 auto
+    padding: 30px 0
+    max-width: 450px
+    width: 100%
+    min-height: 450px
+    background-color: $mainWhite
+    box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.15)
+
+.close
+  @include btn-reset
+  position: absolute
+  top: 15px
+  right: 15px
+  width: 30px
+  height: 30px
+  &__stick
+    position: absolute
+    left: 5px
+    width: 20px
+    height: 2px
+    background-color: $textGray
+    transform-origin: center
+    transition: transform .3s ease-in-out, background-color .3s ease-in-out
+  &__stick_1
+    transform: rotate(45deg)
+  &__stick_2
+    transform: rotate(-45deg)
+
+.close:hover .close__stick,
+.close:focus .close__stick
+  background-color: $mainRed
+
+.close:hover .close__stick_1,
+.close:focus .close__stick_1
+  transform: rotate(135deg)
+
+.close:hover .close__stick_2,
+.close:focus .close__stick_2
+  transform: rotate(45deg)
+
+.form
+  &__header
+    @include h-reset
+    @include setFontStyle
+    margin-bottom: 15px
+    font-weight: 700
+    font-size: 18px
+    padding: 0 30px
+  &__id
+    padding-left: 12px
+    font-size: 12px
+    font-weight: 400
+    color: $textGray
+  &__item
+    @include btn-reset
+    padding: 0 30px
+  &__fullname
+    @include btn-reset
+    margin-bottom: 10px
+  &__label
+    font-size: 10px
+    font-weight: 400
+    color: #B0B0B0
+  &__require
+    color: $firmColor
+  &__input
+    @include btn-reset
+    width: 100%
+    padding: 4px 0
+    margin-bottom: 15px
+    border-bottom: 1px solid $inputBorder
+    font-size: 14px
+    font-weight: 600
+    color: $mainGray
+    transition: border-color .3s ease-in-out
+  &__input:hover,
+  &__input:focus
+    border-color: $firmColor
+  &__contacts
+    @include btn-reset
+    background-color: rgba(200, 197, 209, 0.3)
+    margin-bottom: 25px
+  &__add-contact
+    @include btn-reset
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    padding: 8px 0
+    font-size: 14px
+    font-weight: 600
+    color: $mainGray
+    transition: color .3s ease-in-out
+  &__add-contact:hover,
+  &__add-contact:focus
+    color: $firmColor
+  &__btn-icon
+    margin-right: 4px
+    width: 16px
+  &__save
+    @include btn-reset
+    display: block
+    min-width: 147px
+    margin: 0 auto 5px
+    padding: 15px 20px
+    text-align: center
+    background-color: $firmColor
+    color: $mainWhite
+    font-size: 14px
+    font-weight: 600
+    transition: background-color .3s ease-in-out, color .3s ease-in-out
+  &__save:hover,
+  &__save:focus
+    background-color: $firmColorTransparent
+    color: $firmColor
+  &__delete
+    @include btn-reset
+    display: block
+    margin: 0 auto
+    color: $mainGray
+    font-size: 12px
+    font-weight: 400
+    text-decoration-line: underline
+    transition: color .3s ease-in-out
+  &__delete:hover,
+  &__delete:focus
+    color: $mainRed

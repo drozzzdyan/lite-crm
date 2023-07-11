@@ -22,7 +22,7 @@ export const clean = async () => {
 }
 
 export const replaceCss = () => {
-  return gulp.src('./src/*.css')
+  return gulp.src('./src/css/*.css')
     .pipe(gulp.dest('./dist'))
     .pipe(minifyHtml({
       collapseWhitespace: true
